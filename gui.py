@@ -1,6 +1,6 @@
 import sys
 #holy shit lol
-from mapprocessor import returnmiddleschools,returnhighschools,returnelementaryschools
+#from mapprocessor import listofdata
 from tkinter import *
 selection = ""
 
@@ -18,15 +18,19 @@ class mapwindow:
         #self.greet_button = Button(master, text="Greet", command=self.greet)
         #self.greet_button.pack()
 
-        schools = StringVar(master)
-        schools.set("one") # default value
+        school = StringVar(master)
+        school.set("one") # default value
 
-        w = OptionMenu(master, schools, "one", "two", "three")
+
+        w = OptionMenu(master, school, "one", "two", "three")
         w.pack()
+
+
+        self.what = Button(master, text="submit", command=self.givemethetype)
+        self.what.pack()
 
         self.close_button = Button(master, text="Close", command=master.quit)
         self.close_button.pack()
-
 
 
     def greet(self):
@@ -36,7 +40,7 @@ class mapwindow:
         print("die")#empty lines here
 
     def givemethetype(self):
-        print("jesus h christ")
+        print("am i retarded")
 
 
 root = Tk()
