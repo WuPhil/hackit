@@ -1,28 +1,44 @@
 import sys
-from PyQt4 import QtGui
-import gmplot
+#holy shit lol
+from mapprocessor import returnmiddleschools,returnhighschools,returnelementaryschools
+from tkinter import *
+selection = ""
 
-class map(
+class mapwindow:
+    def __init__(self, master):
+        self.master = master
 
-class Example(QtGui.QMainWindow):
-    
-    def __init__(self):
-        super(Example, self).__init__()
-        
-        self.initUI()
-        
-        
-    def initUI(self):               
-        
-        self.setGeometry(300, 300, 250, 150)
-        self.setWindowTitle('im abt to die rn')    
-        self.show()
+        root.geometry('{}x{}'.format(500, 500))
+
+        master.title("well i guess we're gonna use tinker")
+
+        #self.label = Label(master, text="This is our first GUI!")
+        #self.label.pack()
+
+        #self.greet_button = Button(master, text="Greet", command=self.greet)
+        #self.greet_button.pack()
+
+        schools = StringVar(master)
+        schools.set("one") # default value
+
+        w = OptionMenu(master, schools, "one", "two", "three")
+        w.pack()
+
+        self.close_button = Button(master, text="Close", command=master.quit)
+        self.close_button.pack()
 
 
-def main():
-    
-    app = QtGui.QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
 
-main()
+    def greet(self):
+        print("Greetings!")
+
+    def schools(self):
+        print("die")#empty lines here
+
+    def givemethetype(self):
+        print("jesus h christ")
+
+
+root = Tk()
+my_gui = mapwindow(root)
+root.mainloop()
